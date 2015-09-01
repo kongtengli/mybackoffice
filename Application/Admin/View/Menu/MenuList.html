@@ -1,0 +1,44 @@
+<extend name='Public:base'/>    
+<block name='content'>
+<div class="block">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left">Table with row classes</div>
+        <div class=" pull-right" style="position:relative;bottom:5px;">
+            <a href="{:U('Menu/addMenu')}"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
+        </div>                                
+    </div>
+    <div class="block-content collapse in">
+        <div class="span12">                                  
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>URL</th>
+                        <th>STATUS</th>
+                        <th>CreatTime</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <foreach name='data' item='v'>
+                    <tr>
+                        <td>{$v.id}</td>
+                        <td>{$v.name}</td>
+                        <td>{$v.url}</td>
+                        <td><if condition='$v.active eq 0'><i class="icon-ok"></i></if></td>
+                    <td>{$v.createtime|date='Y-m-d',###}</td>
+                    <td>
+                        <a href="{:U('Administrator/updateAdmin',array('id'=>$v['id']))}"><button class="btn btn-success">Update <i class="icon-edit icon-white"></i></button></a>
+                        <a href="{:U('Administrator/delAdmin',array('id'=>$v['id']))}"><button class="btn btn-danger">Update <i class="icon-trash icon-white"></i></button></a>
+                    </td>
+                    </tr>                                                                  
+                </foreach>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>    
+</block>
+
+<block name='addjs'></block>

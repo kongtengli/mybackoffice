@@ -1,7 +1,6 @@
 <?php
 namespace Admin\Model;
-use Think\Model;
-class AdministratorModel extends Model {
+class AdministratorModel extends BaseModel {
     public function adminList(){
        return $this->select();
     }
@@ -13,5 +12,5 @@ class AdministratorModel extends Model {
         }else{
             return false;
         }
-    }    
+    } 
 }

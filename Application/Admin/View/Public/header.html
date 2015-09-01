@@ -1,19 +1,19 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
     <head>
         <title>Tables</title>
         <!-- Bootstrap -->
-        <link href="/mybackoffice/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/mybackoffice/Public/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-        <link href="/mybackoffice/Public/assets/styles.css" rel="stylesheet" media="screen">
-        <link href="/mybackoffice/Public/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/assets/styles.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
         <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script src="/mybackoffice/Public/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="__PUBLIC__/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
 
     <body>
@@ -129,65 +129,8 @@
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
-                <?php echo W('Menu/menu');?> 
+                {:W('Menu/menu')} 
                 <!--/span-->
                 <div class="span9" id="content">
                     <div class="row-fluid">
                         <!-- block -->                
-
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Table with row classes</div>
-                                <div class=" pull-right" style="position:relative;bottom:5px;">
-                                    <a href="<?php echo U('Administrator/addAdmin');?>"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
-                                </div>                                
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">                                  
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Type</th>
-                                                <th>CreatTime</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
-                                                <td><?php echo ($v["id"]); ?></td>
-                                                <td><?php echo ($v["name"]); ?></td>
-                                                <td><?php echo ($v["type"]); ?></td>
-                                                <td><?php echo (date('Y-m-d',$v["createtime"])); ?></td>
-                                                <td>
-                                                    <a href="<?php echo U('Administrator/updateAdmin',array('id'=>$v['id']));?>"><button class="btn btn-success">Update <i class="icon-edit icon-white"></i></button></a>
-                                                    <a href="<?php echo U('Administrator/delAdmin',array('id'=>$v['id']));?>"><button class="btn btn-danger">Update <i class="icon-trash icon-white"></i></button></a>
-                                                </td>
-                                            </tr><?php endforeach; endif; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>                            
-                        
-                        <!-- /block -->
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <footer>
-                <p>&copy; Vincent Gabriel 2013</p>
-            </footer>
-        </div>
-        <!--/.fluid-container-->
-
-        <script src="/mybackoffice/Public/vendors/jquery-1.9.1.js"></script>
-        <script src="/mybackoffice/Public/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/mybackoffice/Public/vendors/datatables/js/jquery.dataTables.min.js"></script>
-        <script src="/mybackoffice/Public/assets/scripts.js"></script>
-        <script src="/mybackoffice/Public/assets/DT_bootstrap.js"></script>
-        
-    </body>
-
-</html>

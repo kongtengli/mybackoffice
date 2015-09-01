@@ -137,40 +137,56 @@
 
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Table with row classes</div>
-                                <div class=" pull-right" style="position:relative;bottom:5px;">
-                                    <a href="<?php echo U('Administrator/addAdmin');?>"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
-                                </div>                                
+                                <div class="muted pull-left">增加管理员</div>
                             </div>
                             <div class="block-content collapse in">
-                                <div class="span12">                                  
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Type</th>
-                                                <th>CreatTime</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
-                                                <td><?php echo ($v["id"]); ?></td>
-                                                <td><?php echo ($v["name"]); ?></td>
-                                                <td><?php echo ($v["type"]); ?></td>
-                                                <td><?php echo (date('Y-m-d',$v["createtime"])); ?></td>
-                                                <td>
-                                                    <a href="<?php echo U('Administrator/updateAdmin',array('id'=>$v['id']));?>"><button class="btn btn-success">Update <i class="icon-edit icon-white"></i></button></a>
-                                                    <a href="<?php echo U('Administrator/delAdmin',array('id'=>$v['id']));?>"><button class="btn btn-danger">Update <i class="icon-trash icon-white"></i></button></a>
-                                                </td>
-                                            </tr><?php endforeach; endif; ?>
-                                        </tbody>
-                                    </table>
+                                <div class="span12">
+                                     <form class="form-horizontal" method='post' action=''>
+                                      <fieldset>
+                                        <input type='hidden' name='id' value='<?php echo ($data["id"]); ?>'/>
+                                        <div class="control-group">
+                                          <label class="control-label" for="focusedInput">用户名</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge "  <?php if($operation==='update'): ?>disabled=''<?php endif; ?> value='<?php echo ($data["name"]); ?>' name='name' id='focusedInput' value='<?php echo ($data["name"]); ?>' type="text" placeholder='用户名为最多16位英文字符'>
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label" for="password">密码</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge" id='password' name='password' type="password" placeholder="密码为16位字符，可包括数字字母和下划线">
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label" for="password2">再次输入密码</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge" id='password2' name='password2' type="password" placeholder="密码为16位字符，可包括数字字母和下划线">
+                                          </div>
+                                        </div>
+<!--                                        <div class="control-group success">
+                                          <label class="control-label" for="admintype">类型</label>
+                                          <div class="controls">
+                                            <select id="admintype">
+                                              <option>请选择类型</option>  
+                                              <option value='1'>1</option>
+                                              <option value='2'>2</option>
+                                              <option value='3'>3</option>
+                                              <option value='4'>4</option>
+                                              <option value='5'>5</option>
+                                            </select>
+                                            <span class="help-inline">Woohoo!</span>
+                                          </div>
+                                        </div>-->
+                                        <div class="form-actions">
+                                          <button type="submit" class="btn btn-primary">Save changes</button>
+                                          <button type="reset" class="btn">Cancel</button>
+                                        </div>
+                                      </fieldset>
+                                    </form>
+
                                 </div>
                             </div>
-                        </div>                            
-                        
+                        </div>
+
                         <!-- /block -->
                     </div>
                 </div>

@@ -4,15 +4,15 @@
     <head>
         <title>Admin Home Page</title>
         <!-- Bootstrap -->
-        <link href="/tp/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="/tp/Public/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-        <link href="/tp/Public/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
-        <link href="/tp/Public/assets/styles.css" rel="stylesheet" media="screen">
+        <link href="/mybackoffice/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="/mybackoffice/Public/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+        <link href="/mybackoffice/Public/vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+        <link href="/mybackoffice/Public/assets/styles.css" rel="stylesheet" media="screen">
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script src="/tp/Public/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="/mybackoffice/Public/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     
     <body>
@@ -511,10 +511,10 @@
             </footer>
         </div>
         <!--/.fluid-container-->
-        <script src="/tp/Public/vendors/jquery-1.9.1.min.js"></script>
-        <script src="/tp/Public/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/tp/Public/vendors/easypiechart/jquery.easy-pie-chart.js"></script>
-        <script src="/tp/Public/assets/scripts.js"></script>
+        <script src="/mybackoffice/Public/vendors/jquery-1.9.1.min.js"></script>
+        <script src="/mybackoffice/Public/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/mybackoffice/Public/vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+        <script src="/mybackoffice/Public/assets/scripts.js"></script>
         <script>
         $(function() {
             // Easy pie charts

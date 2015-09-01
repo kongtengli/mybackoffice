@@ -1,9 +1,7 @@
 <?php
 
 namespace Admin\Controller;
-
 use Think\Controller;
-
 class LoginController extends Controller {
 
     public function index() {
@@ -26,7 +24,8 @@ class LoginController extends Controller {
         if (empty($data)) {
             return false;
         } else {
-            return D('User')->validData($data);
+            debug('data',$data );
+            return D('Administrator')->validData($data);
         }
     }
 

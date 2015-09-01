@@ -135,42 +135,44 @@
                     <div class="row-fluid">
                         <!-- block -->                
 
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Table with row classes</div>
-                                <div class=" pull-right" style="position:relative;bottom:5px;">
-                                    <a href="<?php echo U('Administrator/addAdmin');?>"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
-                                </div>                                
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">                                  
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Type</th>
-                                                <th>CreatTime</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
-                                                <td><?php echo ($v["id"]); ?></td>
-                                                <td><?php echo ($v["name"]); ?></td>
-                                                <td><?php echo ($v["type"]); ?></td>
-                                                <td><?php echo (date('Y-m-d',$v["createtime"])); ?></td>
-                                                <td>
-                                                    <a href="<?php echo U('Administrator/updateAdmin',array('id'=>$v['id']));?>"><button class="btn btn-success">Update <i class="icon-edit icon-white"></i></button></a>
-                                                    <a href="<?php echo U('Administrator/delAdmin',array('id'=>$v['id']));?>"><button class="btn btn-danger">Update <i class="icon-trash icon-white"></i></button></a>
-                                                </td>
-                                            </tr><?php endforeach; endif; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>                            
-                        
+<div class="block">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left">Table with row classes</div>
+        <div class=" pull-right" style="position:relative;bottom:5px;">
+            <a href="<?php echo U('Menu/addMenu');?>"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
+        </div>                                
+    </div>
+    <div class="block-content collapse in">
+        <div class="span12">                                  
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>URL</th>
+                        <th>STATUS</th>
+                        <th>CreatTime</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
+                        <td><?php echo ($v["id"]); ?></td>
+                        <td><?php echo ($v["name"]); ?></td>
+                        <td><?php echo ($v["url"]); ?></td>
+                        <td><?php if($v["active"] == 0): ?><i class="icon-ok"></i><?php endif; ?></td>
+                    <td><?php echo (date('Y-m-d',$v["createtime"])); ?></td>
+                    <td>
+                        <a href="<?php echo U('Administrator/updateAdmin',array('id'=>$v['id']));?>"><button class="btn btn-success">Update <i class="icon-edit icon-white"></i></button></a>
+                        <a href="<?php echo U('Administrator/delAdmin',array('id'=>$v['id']));?>"><button class="btn btn-danger">Update <i class="icon-trash icon-white"></i></button></a>
+                    </td>
+                    </tr><?php endforeach; endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>    
+
                         <!-- /block -->
                     </div>
                 </div>

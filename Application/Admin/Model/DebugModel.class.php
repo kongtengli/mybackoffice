@@ -4,7 +4,10 @@ use Think\Model;
 class DebugModel extends Model {
     public function saveData($name,$value){
         $data['name'] =  $name;
-        $data['value'] = dump($value,false);
+        ob_start();
+        var_dump($value);
+        $data['value'] = ob_get_contents();
+        ob_clean();
         $this->add($data);
     }
 }
